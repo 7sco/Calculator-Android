@@ -40,6 +40,7 @@
         android:orientation="vertical"
         android:layout_gravity="center"
         android:background="@color/colorPrimary"
+
         >
 
 
@@ -53,6 +54,45 @@
             android:layout_weight=".4"
             >
 
+            <Button
+                android:background="@drawable/roundedbutton2"
+                android:id="@+id/rad"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="match_parent"
+                android:textColor="@color/color_numbers"
+                android:textSize="@dimen/text_size"
+                android:typeface="sans"
+                android:text="Rad"
+
+                />
+
+            <Button
+                android:background="@drawable/roundedbutton2"
+                android:id="@+id/nn"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="match_parent"
+                android:text="deg"
+                android:textColor="@color/color_numbers"
+                android:textSize="@dimen/text_size"
+                android:typeface="sans"
+
+                />
+
+
+            <Button
+                android:background="@drawable/roundedbutton2"
+                android:id="@+id/sqrt"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="match_parent"
+                android:text="\u221A"
+                android:textColor="@color/color_numbers"
+                android:textSize="@dimen/text_size"
+                android:typeface="sans"
+
+                />
 
             <Button
                 android:background="@drawable/roundedbutton"
@@ -62,7 +102,7 @@
                 android:layout_height="match_parent"
                 android:text="C"
                 android:textColor="@color/numbers_red"
-                android:textSize="30sp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans"
 
                 />
@@ -75,7 +115,7 @@
                 android:layout_height="match_parent"
                 android:text="( )"
                 android:textColor="@color/blue_numbers"
-                android:textSize="30dp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans"                />
 
             <Button
@@ -86,7 +126,7 @@
                 android:layout_height="match_parent"
                 android:text="%"
                 android:textColor="@color/blue_numbers"
-                android:textSize="30dp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans"
                 />
 
@@ -100,7 +140,7 @@
                 android:layout_height="match_parent"
                 android:text="\u00F7"
                 android:textColor="@color/blue_numbers"
-                android:textSize="30dp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans"
                 />
 
@@ -117,6 +157,49 @@
             android:layout_height="0dp"
             android:layout_weight=".4"
             >
+
+            <Button
+                android:background="@drawable/roundedbutton2"
+                android:id="@+id/sin"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="match_parent"
+                android:textColor="@color/color_numbers"
+                android:textSize="@dimen/text_size"
+                android:typeface="sans"
+                android:text="sin"
+
+                />
+
+            <Button
+                android:background="@drawable/roundedbutton2"
+                android:id="@+id/cos"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="match_parent"
+                android:text="cos"
+                android:textColor="@color/color_numbers"
+                android:textSize="@dimen/text_size"
+                android:typeface="sans"
+
+                />
+
+
+            <Button
+                android:background="@drawable/roundedbutton2"
+                android:id="@+id/tan"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="match_parent"
+                android:text="tan"
+                android:textColor="@color/color_numbers"
+                android:textSize="@dimen/text_size"
+                android:typeface="sans"
+
+                />
+
+
+
             <Button
                 android:background="@drawable/roundedbutton"
                 android:id="@+id/seven"
@@ -125,7 +208,7 @@
                 android:layout_height="match_parent"
                 android:text="7"
                 android:textColor="@color/color_numbers"
-                android:textSize="30dp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans"
 
                 />
@@ -137,7 +220,7 @@
                 android:layout_height="match_parent"
                 android:text="8"
                 android:textColor="@color/color_numbers"
-                android:textSize="30dp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans"
                 />
 
@@ -149,7 +232,7 @@
                 android:layout_height="match_parent"
                 android:text="9"
                 android:textColor="@color/color_numbers"
-                android:textSize="30dp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans"
                 />
 
@@ -161,7 +244,7 @@
                 android:layout_height="match_parent"
                 android:text="\u00D7"
                 android:textColor="@color/blue_numbers"
-                android:textSize="30dp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans"
                 />
 
@@ -175,8 +258,49 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".4"
-            android:textSize="30dp"
+            android:textSize="@dimen/text_size"
             >
+
+            <Button
+                android:background="@drawable/roundedbutton2"
+                android:id="@+id/sin_inverse"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="match_parent"
+                android:textColor="@color/color_numbers"
+                android:textSize="@dimen/text_size"
+                android:typeface="normal"
+                android:text="sin^-1"
+
+                />
+
+            <Button
+                android:background="@drawable/roundedbutton2"
+                android:id="@+id/cos_inverse"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="match_parent"
+                android:text="cos^-1"
+                android:textColor="@color/color_numbers"
+                android:textSize="@dimen/text_size"
+                android:typeface="sans"
+
+                />
+
+
+            <Button
+                android:background="@drawable/roundedbutton2"
+                android:id="@+id/tan_inverse"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="match_parent"
+                android:text="tan^-1"
+                android:textColor="@color/color_numbers"
+                android:textSize="@dimen/text_size"
+                android:typeface="sans"
+
+                />
+
 
             <Button
                 android:background="@drawable/roundedbutton"
@@ -186,7 +310,7 @@
                 android:layout_height="match_parent"
                 android:text="4"
                 android:textColor="@color/color_numbers"
-                android:textSize="30dp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans"
 
                 />
@@ -198,7 +322,7 @@
                 android:layout_height="match_parent"
                 android:text="5"
                 android:textColor="@color/color_numbers"
-                android:textSize="30dp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans"
 
                 />
@@ -210,7 +334,7 @@
                 android:layout_height="match_parent"
                 android:text="6"
                 android:textColor="@color/color_numbers"
-                android:textSize="30dp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans"
                 />
 
@@ -223,7 +347,7 @@
                 android:layout_height="match_parent"
                 android:text="\u207B"
                 android:textColor="@color/blue_numbers"
-                android:textSize="30dp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans"
                 />
 
@@ -240,6 +364,49 @@
             android:gravity="center"
             >
 
+
+            <Button
+                android:background="@drawable/roundedbutton2"
+                android:id="@+id/e_to_square"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="match_parent"
+                android:textColor="@color/color_numbers"
+                android:textSize="@dimen/text_size"
+                android:typeface="normal"
+                android:text="e\u00B2"
+
+                />
+
+            <Button
+                android:background="@drawable/roundedbutton2"
+                android:id="@+id/e_to_x"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="match_parent"
+                android:text="e^x"
+                android:textColor="@color/color_numbers"
+                android:textSize="@dimen/text_size"
+                android:typeface="sans"
+
+                />
+
+
+            <Button
+                android:background="@drawable/roundedbutton2"
+                android:id="@+id/pi"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="match_parent"
+                android:text="\u03A0"
+                android:textColor="@color/color_numbers"
+                android:textSize="@dimen/text_size"
+                android:typeface="sans"
+
+                />
+
+
+
             <Button
                 android:background="@drawable/roundedbutton"
                 android:id="@+id/one"
@@ -248,7 +415,7 @@
                 android:layout_weight=".25"
                 android:text="1"
                 android:textColor="@color/color_numbers"
-                android:textSize="30dp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans"
                 />
 
@@ -260,7 +427,7 @@
                 android:layout_height="match_parent"
                 android:text="2"
                 android:textColor="@color/color_numbers"
-                android:textSize="30dp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans"
                 />
 
@@ -272,7 +439,7 @@
                 android:layout_height="match_parent"
                 android:text="3"
                 android:textColor="@color/color_numbers"
-                android:textSize="30dp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans"
                 />
 
@@ -285,7 +452,7 @@
                 android:layout_height="match_parent"
                 android:text="+"
                 android:textColor="@color/blue_numbers"
-                android:textSize="30dp"
+                android:textSize="@dimen/text_size"
                 android:textStyle="normal"
                 android:typeface="sans"
                 />
@@ -300,6 +467,51 @@
             android:layout_height="0dp"
             android:layout_weight=".4"
             >
+
+
+            <Button
+                android:background="@drawable/roundedbutton2"
+                android:id="@+id/absolute_value"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="match_parent"
+                android:textColor="@color/color_numbers"
+                android:textSize="@dimen/text_size"
+                android:typeface="normal"
+                android:text="|x|"
+
+                />
+
+            <Button
+                android:background="@drawable/roundedbutton2"
+                android:id="@+id/natural_log"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="match_parent"
+                android:text="ln"
+                android:textColor="@color/color_numbers"
+                android:textSize="@dimen/text_size"
+                android:typeface="sans"
+
+                />
+
+
+            <Button
+                android:background="@drawable/roundedbutton2"
+                android:id="@+id/log"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="match_parent"
+                android:text="log"
+                android:textColor="@color/color_numbers"
+                android:textSize="@dimen/text_size"
+                android:typeface="sans"
+
+                />
+
+
+
+
             <Button
                 android:background="@drawable/roundedbutton"
                 android:id="@+id/make_negative"
@@ -308,7 +520,7 @@
                 android:layout_height="match_parent"
                 android:text="\u207A/\u208B"
                 android:textColor="@color/color_numbers"
-                android:textSize="30dp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans"
 
                 />
@@ -322,7 +534,7 @@
                 android:layout_height="match_parent"
                 android:text="0"
                 android:textColor="@color/color_numbers"
-                android:textSize="30dp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans"
                 />
 
@@ -334,7 +546,7 @@
                 android:layout_height="match_parent"
                 android:text="\u2219"
                 android:textColor="@color/color_numbers"
-                android:textSize="50dp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans"
 
                 />
@@ -347,7 +559,7 @@
                 android:layout_height="match_parent"
                 android:text="\u003D"
                 android:textColor="@color/numbers_background"
-                android:textSize="50sp"
+                android:textSize="@dimen/text_size"
                 android:layout_gravity="center"
                 android:typeface="sans"
                 />
