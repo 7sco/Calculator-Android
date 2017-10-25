@@ -217,7 +217,7 @@
 
             <Button
                 android:background="@drawable/roundedbutton"
-                android:id="@+id/rest"
+                android:id="@+id/substract"
                 android:layout_width="0dp"
                 android:layout_weight=".25"
                 android:layout_height="match_parent"
