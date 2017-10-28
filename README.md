@@ -14,7 +14,7 @@ Breakdown of the teamworks:
 
 Library: MathJS Android for scientific functions
 
-Dependency included in the build.gradle(Module.app)
+Dependency included in the build.gradle(Module.app)  
 Included Repositories maven in build.gradle(Project)
 
 -----------------------------------------------------
