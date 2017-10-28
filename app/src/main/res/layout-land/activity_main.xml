@@ -56,28 +56,28 @@
 
             <Button
                 android:background="@drawable/roundedbutton2"
-                android:id="@+id/rad"
+                android:id="@+id/parenthesis_left"
                 android:layout_width="0dp"
                 android:layout_weight=".25"
                 android:layout_height="match_parent"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
-                android:text="Rad"
-
+                android:text="("
+                android:onClick="onClick"
                 />
 
             <Button
                 android:background="@drawable/roundedbutton2"
-                android:id="@+id/nn"
+                android:id="@+id/parenthesis_right"
                 android:layout_width="0dp"
                 android:layout_weight=".25"
                 android:layout_height="match_parent"
-                android:text="deg"
+                android:text=")"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
-
+                android:onClick="onClick"
                 />
 
 
@@ -91,7 +91,7 @@
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
-
+                android:onClick="onClick"
                 />
 
             <Button
@@ -109,11 +109,11 @@
 
             <Button
                 android:background="@drawable/roundedbutton"
-                android:id="@+id/parenthesis"
+                android:id="@+id/pi"
                 android:layout_width="0dp"
                 android:layout_weight=".25"
                 android:layout_height="match_parent"
-                android:text="( )"
+                android:text="PI"
                 android:textColor="@color/blue_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"                />
@@ -168,7 +168,7 @@
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
                 android:text="sin"
-
+                android:onClick="onClick"
                 />
 
             <Button
@@ -181,7 +181,7 @@
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
-
+                android:onClick="onClick"
                 />
 
 
@@ -195,7 +195,7 @@
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
-
+                android:onClick="onClick"
                 />
 
 
@@ -271,7 +271,7 @@
                 android:textSize="@dimen/text_size"
                 android:typeface="normal"
                 android:text="sin^-1"
-
+                android:onClick="onClick"
                 />
 
             <Button
@@ -284,7 +284,7 @@
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
-
+                android:onClick="onClick"
                 />
 
 
@@ -375,6 +375,7 @@
                 android:textSize="@dimen/text_size"
                 android:typeface="normal"
                 android:text="e\u00B2"
+                android:onClick="onClick"
 
                 />
 
@@ -388,21 +389,21 @@
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
-
+                android:onClick="onClick"
                 />
 
 
             <Button
                 android:background="@drawable/roundedbutton2"
-                android:id="@+id/pi"
+                android:id="@+id/rad"
                 android:layout_width="0dp"
                 android:layout_weight=".25"
                 android:layout_height="match_parent"
-                android:text="\u03A0"
+                android:text="RAD"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
-
+                android:onClick="onClick"
                 />
 
 
@@ -479,6 +480,7 @@
                 android:textSize="@dimen/text_size"
                 android:typeface="normal"
                 android:text="|x|"
+                android:onClick="onClick"
 
                 />
 
@@ -492,6 +494,7 @@
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
+                android:onClick="onClick"
 
                 />
 
@@ -506,6 +509,7 @@
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
+                android:onClick="onClick"
 
                 />
 
@@ -562,6 +566,7 @@
                 android:textSize="@dimen/text_size"
                 android:layout_gravity="center"
                 android:typeface="sans"
+
                 />
 
 

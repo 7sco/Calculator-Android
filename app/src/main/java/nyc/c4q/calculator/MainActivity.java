@@ -9,32 +9,24 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import mathjs.niltonvasques.com.mathjs.MathJS;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private boolean isInverse = false;
-
-    private CalculatorActivity mCalculator;
-
-    private Button buttonZero,buttonOne,buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven, buttonEight, buttonNine;
-    private Button buttonRest,buttonTimes, buttonDivision,buttonClear, buttonEquals, buttonDot, buttonPlus, buttonPercentage, closeParenthesis;
-    private Button buttonDeg, buttonSin, buttonLn,buttonCos, buttonLog, buttonTan, buttonSquareRoot,  buttonXSquare, buttonYPowerX,
+    private Button buttonZero, buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven, buttonEight, buttonNine;
+    private Button buttonRest, buttonTimes, buttonDivision, buttonClear, buttonEquals, buttonDot, buttonPlus, buttonPercentage, closeParenthesis;
+    private Button buttonDeg, buttonSin, buttonLn, buttonCos, buttonLog, buttonTan, buttonSquareRoot, buttonXSquare, buttonYPowerX,
             buttonRad, buttonCosInverse, buttonSinInverse, buttonTanInverse, buttonPi, buttonAbs;
 
     TextView edtNumber;
 
-    double mValueOne, mValueTwo;
-    boolean addition, subtract, multiplication, division;
-
     int sign;
-    private String displayedInput;
-    private String inputToBeParsed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mCalculator= new CalculatorActivity();
-//        getRotation(Context mCalculator);
 
         buttonZero = (Button) findViewById(R.id.zero);
         buttonOne = (Button) findViewById(R.id.one);
@@ -48,16 +40,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonNine = (Button) findViewById(R.id.nine);
         buttonPlus = (Button) findViewById(R.id.plus);
         buttonRest = (Button) findViewById(R.id.rest);
-        buttonTimes = (Button) findViewById(R.id.times);;
-        buttonDivision= (Button) findViewById(R.id.division);;
+        buttonTimes = (Button) findViewById(R.id.times);
+
+        buttonDivision = (Button) findViewById(R.id.division);
+
         buttonClear = (Button) findViewById(R.id.clear);
         buttonEquals = (Button) findViewById(R.id.equals);
         buttonDot = (Button) findViewById(R.id.dot);
         buttonPercentage = (Button) findViewById(R.id.percentage);
-        closeParenthesis = (Button) findViewById(R.id.parenthesis);
         buttonSin = (Button) findViewById(R.id.sin);
-        buttonRad = (Button) findViewById(R.id.rad);
-        buttonDeg = (Button) findViewById(R.id.nn);
         buttonSquareRoot = (Button) findViewById(R.id.sqrt);
         buttonCos = (Button) findViewById(R.id.cos);
         buttonTan = (Button) findViewById(R.id.tan);
@@ -70,8 +61,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonAbs = (Button) findViewById(R.id.absolute_value);
         buttonLn = (Button) findViewById(R.id.natural_log);
         buttonLog = (Button) findViewById(R.id.log);
-
-
 
         edtNumber = (TextView) findViewById(R.id.text);
         buttonZero.setOnClickListener(this);
@@ -91,96 +80,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonClear.setOnClickListener(this);
         buttonEquals.setOnClickListener(this);
         buttonPercentage.setOnClickListener(this);
-        closeParenthesis.setOnClickListener(this);
 
-
-//        buttonSin.setOnClickListener(this);
-//        buttonRad.setOnClickListener(this);
-//        buttonDeg.setOnClickListener(this);
-//        buttonSquareRoot.setOnClickListener(this);
-//        buttonCos.setOnClickListener(this);
-//        buttonTan.setOnClickListener(this);
-//        buttonCosInverse.setOnClickListener(this);
-//        buttonSinInverse.setOnClickListener(this);
-//        buttonTanInverse.setOnClickListener(this);
-//        buttonYPowerX.setOnClickListener(this);
-//        buttonXSquare.setOnClickListener(this);
-//        buttonPi.setOnClickListener(this);
-//        buttonAbs.setOnClickListener(this);
-//        buttonLn.setOnClickListener(this);
-//        buttonLog.setOnClickListener(this);
 
     }
 
-    public String getRotation(Context context){
-        final int rotation = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getOrientation();
-        switch (rotation) {
-            case Surface.ROTATION_0:
-                return "portrait";
-            case Surface.ROTATION_90:
-                buttonSin.setOnClickListener(this);
-            buttonRad.setOnClickListener(this);
-            buttonDeg.setOnClickListener(this);
-            buttonSquareRoot.setOnClickListener(this);
-            buttonCos.setOnClickListener(this);
-            buttonTan.setOnClickListener(this);
-            buttonCosInverse.setOnClickListener(this);
-                buttonSinInverse.setOnClickListener(this);
-            buttonTanInverse.setOnClickListener(this);
-            buttonYPowerX.setOnClickListener(this);
-            buttonXSquare.setOnClickListener(this);
-            buttonPi.setOnClickListener(this);
-            buttonAbs.setOnClickListener(this);
-                buttonLn.setOnClickListener(this);
-            buttonLog.setOnClickListener(this);
-                return "landscape";
-            case Surface.ROTATION_180:
-                return "reverse portrait";
-            default:
-                buttonSin.setOnClickListener(this);
-                buttonRad.setOnClickListener(this);
-                buttonDeg.setOnClickListener(this);
-                buttonSquareRoot.setOnClickListener(this);
-                buttonCos.setOnClickListener(this);
-                buttonTan.setOnClickListener(this);
-                buttonCosInverse.setOnClickListener(this);
-                buttonSinInverse.setOnClickListener(this);
-                buttonTanInverse.setOnClickListener(this);
-                buttonYPowerX.setOnClickListener(this);
-                buttonXSquare.setOnClickListener(this);
-                buttonPi.setOnClickListener(this);
-                buttonAbs.setOnClickListener(this);
-                buttonLn.setOnClickListener(this);
-                buttonLog.setOnClickListener(this);
-                return "reverse landscape";
-
-
-        }
-    }
-
-
-    public void reset(){
-        if(sign ==1){
+    public void reset() {
+        if (sign == 1) {
             edtNumber.setText("");
         }
     }
 
-
-
     @Override
     public void onClick(View view) {
-
-
         Button b = (Button) view;
-
-
 
         switch (b.getId()) {
             case R.id.zero:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "0");
                 break;
-
             case R.id.one:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "1");
@@ -192,217 +110,112 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.three:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "3");
-
                 break;
             case R.id.four:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "4");
-
                 break;
             case R.id.five:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "5");
-
                 break;
             case R.id.six:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "6");
-
                 break;
             case R.id.seven:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "7");
-
                 break;
-
             case R.id.eight:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "8");
-
                 break;
-
             case R.id.nine:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "9");
                 break;
-
             case R.id.dot:
                 reset();
                 edtNumber.setText(edtNumber.getText() + ".");
                 break;
-
             case R.id.plus:
-
-                if (edtNumber.getText().equals("")) {
-                    edtNumber.setText("");
-                } else {
-                    mValueOne = Double.parseDouble(edtNumber.getText() + "");
-                    addition = true;
-                    edtNumber.setText(null);
-                }
-
+                edtNumber.setText(edtNumber.getText() + "+");
                 break;
-
             case R.id.rest:
-
-                if (edtNumber.getText().equals("")) {
-                    edtNumber.setText("");
-                } else {
-                    mValueOne = Float.parseFloat(edtNumber.getText() + "");
-                    subtract = true;
-                    edtNumber.setText(null);
-                }
-
+                edtNumber.setText(edtNumber.getText() + "-");
                 break;
-
             case R.id.times:
-
-                if (edtNumber.getText().equals("")) {
-                    edtNumber.setText("");
-                } else {
-                    mValueOne = Float.parseFloat(edtNumber.getText() + "");
-                    multiplication = true;
-                    edtNumber.setText(null);
-                }
-
+                edtNumber.setText(edtNumber.getText() + "*");
                 break;
-
             case R.id.division:
-                if (edtNumber.getText().equals("")) {
-                    edtNumber.setText("");
-                } else {
-                    mValueOne = Float.parseFloat(edtNumber.getText() + "");
-                    division = true;
-                    edtNumber.setText(null);
-                }
+                edtNumber.setText(edtNumber.getText() + "/");
                 break;
-
             case R.id.equals:
-
-                mValueTwo = Double.parseDouble(edtNumber.getText() + "");
-
-                if (addition == true) {
-                    edtNumber.setText(mValueOne + mValueTwo + "");
-                    addition = false;
-                    sign=1;
-                    break;
-                }
-
-                if (subtract == true) {
-                    edtNumber.setText(mValueOne - mValueTwo + "");
-                    subtract = false;
-                    sign=1;
-                    break;
-                }
-
-                if (multiplication == true) {
-                    edtNumber.setText(mValueOne * mValueTwo + "");
-                    multiplication = false;
-                    break;
-                }
-                if (division == true) {
-                    edtNumber.setText(mValueOne / mValueTwo + "");
-                    division = false;
-
-                }
-
-//                String enteredInput = outputResult.getText().toString();
-//                // call a function that will return the result of the calculate.
-//                String resultObject = mCalculator.getResult(currentDisplayedInput, inputToBeParsed);
-//                outputResult.setText(removeTrailingZero(resultObject));
-
+                MathJS mathJS = new MathJS();
+                String answer = mathJS.eval(edtNumber.getText().toString());
+                System.out.println(answer);
+                edtNumber.setText(answer);
                 break;
-
             case R.id.clear:
                 edtNumber.setText("");
                 break;
-            case R.id.percentage:
-                if(isInverse){
-                    edtNumber.setText("1÷");
-//                    inputToBeParsed += "1÷";
-                }else{
-                    edtNumber.setText("1÷");
-//                    displayedInput += "%";
-//                    inputToBeParsed += "%";
-                }
+            case R.id.percentage:;
+                edtNumber.setText(edtNumber.getText() + "%");
                 break;
-//                toggleInverse();
             case R.id.natural_log:
-                if(isInverse){
-                    displayedInput += "e^";
-                    inputToBeParsed += "e^";
-                }else{
-                    displayedInput += "ln(";
-                    inputToBeParsed += "ln(";
-                }
+                edtNumber.setText(edtNumber.getText() + "ln(");
                 break;
-            case R.id.log:
-                if(isInverse){
-                    displayedInput += "10^";
-                    inputToBeParsed += "10^";
-                }else{
-                    displayedInput += "log(";
-                    inputToBeParsed += "log(";
-                }
+            case R.id.parenthesis_right:
+                edtNumber.setText(edtNumber.getText() + ")");
                 break;
-            case R.id.sqrt:
-                if(isInverse){
-                    displayedInput += "3√(";
-                    inputToBeParsed += "crt(";
-                }else{
-                    displayedInput += "√(";
-                    inputToBeParsed += "sqrt(";
-                }
-                break;
-            case R.id.e_to_x:
-                displayedInput += "^";
-                inputToBeParsed += "^";
-                break;
-            case R.id.sin:
-                if(isInverse){
-                    displayedInput += "asin(";
-                    inputToBeParsed += "asin(";
-                }else{
-                    displayedInput += "sin(";
-                    inputToBeParsed += "sin(";
-                }
-                break;
-            case R.id.cos:
-                if(isInverse){
-                    displayedInput += "acos(";
-                    inputToBeParsed += "acos(";
-                }else{
-                    displayedInput += "cos(";
-                    inputToBeParsed += "cos(";
-                }
-                break;
-            case R.id.tan:
-                if(isInverse){
-                    displayedInput += "atan(";
-                    inputToBeParsed += "atan(";
-                }else{
-                    displayedInput += "tan(";
-                    inputToBeParsed += "tan(";
-                }
-                break;
-            case R.id.e_to_square:
-                if(isInverse){
-                    displayedInput += "^3";
-                    inputToBeParsed += "^3";
-                }else{
-                    displayedInput += "^2";
-                    inputToBeParsed += "^2";
-                }
+            case R.id.parenthesis_left:
+                edtNumber.setText(edtNumber.getText() + "(");
                 break;
             case R.id.absolute_value:
-                displayedInput += "abs(";
-                inputToBeParsed += "abs(";
+                edtNumber.setText(edtNumber.getText() + "abs(");
+                break;
+            case R.id.log:
+                edtNumber.setText(edtNumber.getText() + "log(");
+                break;
+            case R.id.sqrt:
+                edtNumber.setText(edtNumber.getText() + "√(");
+                break;
+            case R.id.e_to_x:
+                edtNumber.setText(edtNumber.getText() + "^");
+                break;
+            case R.id.sin:
+                edtNumber.setText(edtNumber.getText() + "sin(");
+                break;
+            case R.id.cos:
+                edtNumber.setText(edtNumber.getText() + "cos(");
+                break;
+            case R.id.tan:
+                edtNumber.setText(edtNumber.getText() + "tan(");
+                break;
+            case R.id.e_to_square:
+                edtNumber.setText(edtNumber.getText() + "^2");
+                break;
+            case R.id.pi:
+                edtNumber.setText(edtNumber.getText() + "\u03c0");
+                break;
+            case R.id.sin_inverse:
+                edtNumber.setText(edtNumber.getText() + "asin");
+                break;
+            case R.id.cos_inverse:
+                edtNumber.setText(edtNumber.getText() + "acos");
+                break;
+            case R.id.tan_inverse:
+                edtNumber.setText(edtNumber.getText() + "atan");
+                break;
+            case R.id.rad:
+                edtNumber.setText(edtNumber.getText() + "√(");
                 break;
 
             default:
                 break;
         }
-//        edtNumber.setText(currentDisplayedInput);
+
 
 
     }

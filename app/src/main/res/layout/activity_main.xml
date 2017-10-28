@@ -9,7 +9,6 @@
     android:orientation="vertical">
 
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -69,11 +68,11 @@
 
             <Button
                 android:background="@drawable/roundedbutton"
-                android:id="@+id/parenthesis"
+                android:id="@+id/pi"
                 android:layout_width="0dp"
                 android:layout_weight=".25"
                 android:layout_height="match_parent"
-                android:text="( )"
+                android:text="PI"
                 android:textColor="@color/blue_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"                />
