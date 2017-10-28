@@ -29,6 +29,7 @@ public class ExtendedDoubleEvaluator extends DoubleEvaluator {
             return super.evaluate(function, arguments, evaluationContext);
         }
     }
+
     public static double factorial(double n) {
         if (n == 0) {
             return 1;
