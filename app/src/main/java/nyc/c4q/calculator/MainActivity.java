@@ -1,15 +1,15 @@
 package nyc.c4q.calculator;
 
-import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.Surface;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.TextView;
+        import android.content.Context;
+        import android.support.v7.app.AppCompatActivity;
+        import android.os.Bundle;
+        import android.view.Surface;
+        import android.view.View;
+        import android.view.WindowManager;
+        import android.widget.Button;
+        import android.widget.TextView;
 
-import mathjs.niltonvasques.com.mathjs.MathJS;
+        import mathjs.niltonvasques.com.mathjs.MathJS;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -87,6 +87,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonDot.setOnClickListener(this);
         buttonMakeNegative.setOnClickListener(this);
         buttontanInverse.setOnClickListener(this);
+
+
 
 
     }
@@ -169,30 +171,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 edtNumber.setText(edtNumber.getText() + "-");
                 break;
 
-
             case R.id.equals:
+
+
+                if(edtNumber.getText().equals("")){
+                    edtNumber.setText("");
+                    edtNumber.setHint("0");
+                    break;
+                }
+
                 String par=")";
                 String newS="";
 
                 if(parenthesis > 0 && parenthesisClose < 1){
                     for(int i=0;i<parenthesis;i++){
+
                         newS=newS+par;
                     }
                     edtNumber.setText(edtNumber.getText()+ newS);
                 }
 
-
-                    MathJS mathJS = new MathJS();
-                    String answer = mathJS.eval(edtNumber.getText().toString());
-                    System.out.println(answer);
-                    edtNumber.setText(answer);
+                MathJS mathJS = new MathJS();
+                String answer = mathJS.eval(edtNumber.getText().toString());
+                System.out.println(answer);
+                edtNumber.setText(answer);
 
 
 
                 parenthesis=0;
                 parenthesisClose=0;
-
                 break;
+
             case R.id.clear:
                 edtNumber.setText("");
                 break;
@@ -221,7 +230,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 parenthesis++;
                 break;
             case R.id.sqrt:
-                edtNumber.setText(edtNumber.getText() + "√(");
+                edtNumber.setText(edtNumber.getText() + "sqrt(");
                 parenthesis++;
                 break;
             case R.id.e_to_x:
