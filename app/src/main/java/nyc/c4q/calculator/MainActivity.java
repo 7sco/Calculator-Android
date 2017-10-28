@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private boolean isInverse = false;
     private Button buttonZero, buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven, buttonEight, buttonNine;
-    private Button buttonRest, buttonTimes, buttonDivision, buttonClear, buttonEquals, buttonDot, buttonPlus, buttonPercentage, buttonMakeNegative, buttontanInverse, fcloseParenthesis;
+    private Button buttonRest, buttonTimes, buttonDivision, buttonClear, buttonEquals, buttonDot, buttonPlus, buttonPercentage, buttonMakeNegative, buttonAnsrecord, buttontanInverse, fcloseParenthesis;
     private Button buttonDeg, buttonSin, buttonLn, buttonCos, buttonLog, buttonTan, buttonSquareRoot, buttonXSquare, buttonYPowerX,
             buttonRad, buttonCosInverse, buttonSinInverse, buttonTanInverse, buttonPi, buttonAbs;
 
@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int sign;
     int parenthesis;
     int parenthesisClose=0;
+
+    boolean ansRecord;
+    String value;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonLn = (Button) findViewById(R.id.natural_log);
         buttonLog = (Button) findViewById(R.id.log);
         buttonMakeNegative = (Button) findViewById(R.id.make_negative);
+        buttonAnsrecord = (Button) findViewById(R.id.ansRecord);
         //buttontanInverse = (Button) findViewById(R.id.tan_inverse);
 
         edtNumber = (TextView) findViewById(R.id.text);
@@ -92,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonPercentage.setOnClickListener(this);
         buttonDot.setOnClickListener(this);
         buttonMakeNegative.setOnClickListener(this);
+        buttonAnsrecord.setOnClickListener(this);
 //        buttontanInverse.setOnClickListener(this);
 
 
@@ -215,6 +220,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     edtNumber.setText(answer);
 
+                    value= answer;
+                    ansRecord =true;
+
+
+
                 }catch (DuktapeException e){
                     edtNumber.setText("Error");
                 }
@@ -224,10 +234,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 parenthesis=0;
                 parenthesisClose=0;
 
+
                 break;
 
             case R.id.clear:
                 edtNumber.setText("");
+                sign=0;
                 break;
             case R.id.percentage:;
                 edtNumber.setText(edtNumber.getText() + "%");
@@ -291,9 +303,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 edtNumber.setText(edtNumber.getText() + "atan(");
                 parenthesis++;
                 break;
-            case R.id.rad:
-                edtNumber.setText(edtNumber.getText() + "√(");
-                parenthesis++;
+
+            case R.id.ansRecord:
+                if (ansRecord){
+                    edtNumber.setText(value);
+                    sign=0;
+
+                }
+                else{
+                    break;
+                }
+
+
                 break;
 
             default:
