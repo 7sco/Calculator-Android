@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonPercentage.setOnClickListener(this);
         buttonDot.setOnClickListener(this);
         buttonMakeNegative.setOnClickListener(this);
-        buttonAnsrecord.setOnClickListener(this);
+//        buttonAnsrecord.setOnClickListener(this);
 //        buttontanInverse.setOnClickListener(this);
 
 
