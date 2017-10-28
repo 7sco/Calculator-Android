@@ -107,63 +107,75 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.zero:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "0");
+                sign=0;
                 break;
             case R.id.one:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "1");
+                sign=0;
                 break;
             case R.id.two:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "2");
+                sign=0;
                 break;
             case R.id.three:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "3");
+                sign=0;
                 break;
             case R.id.four:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "4");
+                sign=0;
                 break;
             case R.id.five:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "5");
+                sign=0;
                 break;
             case R.id.six:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "6");
+                sign=0;
                 break;
             case R.id.seven:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "7");
+                sign=0;
                 break;
             case R.id.eight:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "8");
+                sign=0;
                 break;
             case R.id.nine:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "9");
+                sign=0;
                 break;
             case R.id.dot:
                 reset();
                 edtNumber.setText(edtNumber.getText() + ".");
+                sign=0;
                 break;
             case R.id.plus:
                 edtNumber.setText(edtNumber.getText() + "+");
                 break;
             case R.id.rest:
                 edtNumber.setText(edtNumber.getText() + "-");
+
                 break;
             case R.id.times:
                 edtNumber.setText(edtNumber.getText() + "*");
+
                 break;
             case R.id.division:
                 edtNumber.setText(edtNumber.getText() + "/");
+
                 break;
 
             case R.id.make_negative:
-
-
 
                 if(edtNumber.getText().toString().contains("-") && edtNumber.getText().toString().charAt(0) == '-'){
                     break;
@@ -172,7 +184,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.equals:
-
 
                 if(edtNumber.getText().equals("")){
                     edtNumber.setText("");
@@ -196,8 +207,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 System.out.println(answer);
                 edtNumber.setText(answer);
 
-
-
+                sign=1;
                 parenthesis=0;
                 parenthesisClose=0;
                 break;
@@ -223,6 +233,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.absolute_value:
                 edtNumber.setText(edtNumber.getText() + "abs(");
+
                 parenthesis++;
                 break;
             case R.id.log:
