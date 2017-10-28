@@ -10,6 +10,8 @@ package nyc.c4q.calculator;
         import android.widget.Button;
         import android.widget.TextView;
 
+        import com.squareup.duktape.DuktapeException;
+
         import mathjs.niltonvasques.com.mathjs.MathJS;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -208,9 +210,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
                 MathJS mathJS = new MathJS();
-                String answer = mathJS.eval(edtNumber.getText().toString());
-                System.out.println(answer);
-                edtNumber.setText(answer);
+                try{
+                    String answer = mathJS.eval(edtNumber.getText().toString());
+
+                    edtNumber.setText(answer);
+
+                }catch (DuktapeException e){
+                    edtNumber.setText("Error");
+                }
+
 
                 sign=1;
                 parenthesis=0;
