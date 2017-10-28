@@ -7,7 +7,6 @@
     android:orientation="vertical"
     tools:context="nyc.c4q.calculator.MainActivity">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -61,12 +60,12 @@
                 />
 
             <Button
-                android:id="@+id/openParenthesis"
+                android:background="@drawable/roundedbutton"
+                android:id="@+id/pi"
+
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight=".25"
-                android:background="@drawable/roundedbutton"
-                android:text="("
+                android:text="PI"
                 android:textColor="@color/blue_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans" />

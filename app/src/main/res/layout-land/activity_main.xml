@@ -49,7 +49,10 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/sinh"
+
+                android:background="@drawable/roundedbutton2"
+                android:id="@+id/parenthesis_left"
+
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".25"
@@ -59,19 +62,22 @@
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
 
+                android:text="("
+                android:onClick="onClick"
                 />
 
             <Button
-                android:id="@+id/cosh"
+                android:background="@drawable/roundedbutton2"
+                android:id="@+id/parenthesis_right"
+
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight=".25"
-                android:background="@drawable/roundedbutton2"
-                android:text="cosh"
+                android:text=")"
+
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
-
+                android:onClick="onClick"
                 />
 
 
@@ -85,7 +91,7 @@
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
-
+                android:onClick="onClick"
                 />
 
             <Button
@@ -102,12 +108,13 @@
                 />
 
             <Button
-                android:id="@+id/openParenthesis"
+                android:background="@drawable/roundedbutton"
+                android:id="@+id/pi"
+
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight=".25"
-                android:background="@drawable/roundedbutton"
-                android:text="("
+                android:text="PI"
+
                 android:textColor="@color/blue_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans" />
@@ -156,6 +163,8 @@
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
+                android:text="sin"
+                android:onClick="onClick"
 
                 />
 
@@ -169,7 +178,7 @@
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
-
+                android:onClick="onClick"
                 />
 
 
@@ -183,7 +192,7 @@
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
-
+                android:onClick="onClick"
                 />
 
 
@@ -255,6 +264,8 @@
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="normal"
+                android:text="sin^-1"
+                android:onClick="onClick"
 
                 />
 
@@ -268,7 +279,7 @@
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
-
+                android:onClick="onClick"
                 />
 
 
@@ -357,6 +368,8 @@
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="normal"
+                android:text="e\u00B2"
+                android:onClick="onClick"
 
                 />
 
@@ -370,21 +383,22 @@
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
-
+                android:onClick="onClick"
                 />
 
 
             <Button
-                android:id="@+id/pi"
+                android:background="@drawable/roundedbutton2"
+                android:id="@+id/rad"
+
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight=".25"
-                android:background="@drawable/roundedbutton2"
-                android:text="pi"
+                android:text="RAD"
+
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
-
+                android:onClick="onClick"
                 />
 
 
@@ -455,6 +469,8 @@
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="normal"
+                android:text="|x|"
+                android:onClick="onClick"
 
                 />
 
@@ -468,6 +484,7 @@
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
+                android:onClick="onClick"
 
                 />
 
@@ -482,6 +499,7 @@
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
+                android:onClick="onClick"
 
                 />
 
@@ -534,7 +552,11 @@
                 android:text="\u003D"
                 android:textColor="@color/numbers_background"
                 android:textSize="@dimen/text_size"
-                android:typeface="sans" />
+                android:layout_gravity="center"
+                android:typeface="sans"
+
+                />
+
 
 
         </LinearLayout>
