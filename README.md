@@ -3,10 +3,10 @@ Calculator app HW6
 
 
 Breakdown of the teamworks:
-Fransisco - Design, try catches, Parentheses Functions and fixes errors
-Yoki- Library, Half of the Scientific functions, Read-Me
-Amar- Functionality of the vertical
-Murrod- Half of the Scientific function
+○ Fransisco - Design, try catches, Parentheses Functions and fixes errors
+○ Yoki- Library, Half of the Scientific functions, Read-Me
+○ Amar- Functionality of the vertical
+○ Murrod- Half of the Scientific function
 
 ------------------------------------------------------------------------------------------------------------------------------
                                           Breakdown of the Calculator 
@@ -16,6 +16,7 @@ Library: MathJS Android for scientific functions
 
 Dependency included in the build.gradle(Module.app)
 Included Repositories maven in build.gradle(Project)
+
 -----------------------------------------------------
 
 MainActivity
