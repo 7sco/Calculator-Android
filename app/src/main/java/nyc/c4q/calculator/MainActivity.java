@@ -15,13 +15,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private boolean isInverse = false;
     private Button buttonZero, buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven, buttonEight, buttonNine;
-    private Button buttonRest, buttonTimes, buttonDivision, buttonClear, buttonEquals, buttonDot, buttonPlus, buttonPercentage, closeParenthesis;
+    private Button buttonRest, buttonTimes, buttonDivision, buttonClear, buttonEquals, buttonDot, buttonPlus, buttonPercentage, buttonMakeNegative, buttontanInverse, fcloseParenthesis;
     private Button buttonDeg, buttonSin, buttonLn, buttonCos, buttonLog, buttonTan, buttonSquareRoot, buttonXSquare, buttonYPowerX,
             buttonRad, buttonCosInverse, buttonSinInverse, buttonTanInverse, buttonPi, buttonAbs;
 
     TextView edtNumber;
 
     int sign;
+    int parenthesis;
+    int parenthesisClose=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonAbs = (Button) findViewById(R.id.absolute_value);
         buttonLn = (Button) findViewById(R.id.natural_log);
         buttonLog = (Button) findViewById(R.id.log);
+        buttonMakeNegative = (Button) findViewById(R.id.make_negative);
+        buttontanInverse = (Button) findViewById(R.id.tan_inverse);
 
         edtNumber = (TextView) findViewById(R.id.text);
         buttonZero.setOnClickListener(this);
@@ -81,6 +85,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonEquals.setOnClickListener(this);
         buttonPercentage.setOnClickListener(this);
         buttonDot.setOnClickListener(this);
+        buttonMakeNegative.setOnClickListener(this);
+        buttontanInverse.setOnClickListener(this);
 
 
     }
@@ -152,13 +158,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.division:
                 edtNumber.setText(edtNumber.getText() + "/");
                 break;
+
+            case R.id.make_negative:
+
+
+
+                if(edtNumber.getText().toString().contains("-") && edtNumber.getText().toString().charAt(0) == '-'){
+                    break;
+                }
+                edtNumber.setText(edtNumber.getText() + "-");
+                break;
+
+
             case R.id.equals:
+                String par=")";
+                String newS="";
+
+                if(parenthesis > 0 && parenthesisClose < 1){
+                    for(int i=0;i<parenthesis;i++){
+                        newS=newS+par;
+                    }
+                    edtNumber.setText(edtNumber.getText()+ newS);
+                }
 
 
-                MathJS mathJS = new MathJS();
-                String answer = mathJS.eval(edtNumber.getText().toString());
-                System.out.println(answer);
-                edtNumber.setText(answer);
+                    MathJS mathJS = new MathJS();
+                    String answer = mathJS.eval(edtNumber.getText().toString());
+                    System.out.println(answer);
+                    edtNumber.setText(answer);
+
+
+
+                parenthesis=0;
+                parenthesisClose=0;
+
                 break;
             case R.id.clear:
                 edtNumber.setText("");
@@ -168,33 +201,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.natural_log:
                 edtNumber.setText(edtNumber.getText() + "ln(");
+                parenthesis++;
                 break;
             case R.id.parenthesis_right:
                 edtNumber.setText(edtNumber.getText() + ")");
+
+                parenthesisClose++;
                 break;
             case R.id.parenthesis_left:
                 edtNumber.setText(edtNumber.getText() + "(");
+                parenthesis++;
                 break;
             case R.id.absolute_value:
                 edtNumber.setText(edtNumber.getText() + "abs(");
+                parenthesis++;
                 break;
             case R.id.log:
                 edtNumber.setText(edtNumber.getText() + "log(");
+                parenthesis++;
                 break;
             case R.id.sqrt:
                 edtNumber.setText(edtNumber.getText() + "√(");
+                parenthesis++;
                 break;
             case R.id.e_to_x:
                 edtNumber.setText(edtNumber.getText() + "^");
                 break;
             case R.id.sin:
                 edtNumber.setText(edtNumber.getText() + "sin(");
+                parenthesis++;
                 break;
             case R.id.cos:
                 edtNumber.setText(edtNumber.getText() + "cos(");
+                parenthesis++;
                 break;
             case R.id.tan:
                 edtNumber.setText(edtNumber.getText() + "tan(");
+                parenthesis++;
                 break;
             case R.id.e_to_square:
                 edtNumber.setText(edtNumber.getText() + "^2");
@@ -203,16 +246,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 edtNumber.setText(edtNumber.getText() + "\u03c0");
                 break;
             case R.id.sin_inverse:
-                edtNumber.setText(edtNumber.getText() + "asin");
+                edtNumber.setText(edtNumber.getText() + "asin(");
+                parenthesis++;
                 break;
             case R.id.cos_inverse:
-                edtNumber.setText(edtNumber.getText() + "acos");
+                edtNumber.setText(edtNumber.getText() + "acos(");
+                parenthesis++;
                 break;
             case R.id.tan_inverse:
-                edtNumber.setText(edtNumber.getText() + "atan");
+                edtNumber.setText(edtNumber.getText() + "atan(");
+                parenthesis++;
                 break;
             case R.id.rad:
                 edtNumber.setText(edtNumber.getText() + "√(");
+                parenthesis++;
                 break;
 
             default:
