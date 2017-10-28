@@ -9,13 +9,15 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.squareup.duktape.DuktapeException;
+
 import mathjs.niltonvasques.com.mathjs.MathJS;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private boolean isInverse = false;
     private Button buttonZero, buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven, buttonEight, buttonNine;
-    private Button buttonRest, buttonTimes, buttonDivision, buttonClear, buttonEquals, buttonDot, buttonPlus, buttonPercentage, buttonMakeNegative, buttontanInverse, closeParenthesis;
+    private Button buttonRest, buttonTimes, buttonDivision, buttonClear, buttonEquals, buttonDot, buttonPlus, buttonPercentage, buttonMakeNegative, buttontanInverse, buttonAnswerStore, closeParenthesis;
     private Button buttonDeg, buttonSin, buttonLn, buttonCos, buttonLog, buttonTan, buttonSquareRoot, buttonXSquare, buttonYPowerX,
             buttonRad, buttonCosInverse, buttonSinInverse, buttonTanInverse, buttonPi, buttonAbs;
 
@@ -64,7 +66,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonLn = (Button) findViewById(R.id.natural_log);
         buttonLog = (Button) findViewById(R.id.log);
         buttonMakeNegative = (Button) findViewById(R.id.make_negative);
-        buttontanInverse = (Button) findViewById(R.id.tan_inverse);
+
+
 
         edtNumber = (TextView) findViewById(R.id.text);
         buttonZero.setOnClickListener(this);
@@ -181,11 +184,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     edtNumber.setText(edtNumber.getText()+ newS);
                 }
 
-
-                    MathJS mathJS = new MathJS();
+                MathJS mathJS = new MathJS();
+                try{
                     String answer = mathJS.eval(edtNumber.getText().toString());
-                    System.out.println(answer);
+
                     edtNumber.setText(answer);
+
+                }catch (DuktapeException e){
+                    edtNumber.setText("Error");
+                }
 
 
 
@@ -257,10 +264,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 edtNumber.setText(edtNumber.getText() + "atan(");
                 parenthesis++;
                 break;
-            case R.id.rad:
-                edtNumber.setText(edtNumber.getText() + "√(");
-                parenthesis++;
-                break;
+//            case R.id.ans:
+//                edtNumber.setText(edtNumber.getText() + "√(");
+//                parenthesis++;
+//                break;
 
             default:
                 break;
