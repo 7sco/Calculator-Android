@@ -9,7 +9,7 @@ Amar- Functionality of the vertical
 Murrod- Half of the Scientific function
 
 ------------------------------------------------------------------------------------------------------------------------------
-                                              Breakdown of the Calculator 
+                                          Breakdown of the Calculator 
 ------------------------------------------------------------------------------------------------------------------------------
 
 Library: MathJS Android for scientific functions
