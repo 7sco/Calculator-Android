@@ -1,6 +1,7 @@
 package nyc.c4q.calculator;
 
         import android.content.Context;
+        import android.content.res.Configuration;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
         import android.view.Surface;
@@ -49,7 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonClear = (Button) findViewById(R.id.clear);
         buttonEquals = (Button) findViewById(R.id.equals);
         buttonDot = (Button) findViewById(R.id.dot);
+
         buttonPercentage = (Button) findViewById(R.id.percentage);
+
+
         buttonSin = (Button) findViewById(R.id.sin);
         buttonSquareRoot = (Button) findViewById(R.id.sqrt);
         buttonCos = (Button) findViewById(R.id.cos);
@@ -64,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonLn = (Button) findViewById(R.id.natural_log);
         buttonLog = (Button) findViewById(R.id.log);
         buttonMakeNegative = (Button) findViewById(R.id.make_negative);
-        buttontanInverse = (Button) findViewById(R.id.tan_inverse);
+        //buttontanInverse = (Button) findViewById(R.id.tan_inverse);
 
         edtNumber = (TextView) findViewById(R.id.text);
         buttonZero.setOnClickListener(this);
@@ -86,9 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonPercentage.setOnClickListener(this);
         buttonDot.setOnClickListener(this);
         buttonMakeNegative.setOnClickListener(this);
-        buttontanInverse.setOnClickListener(this);
-
-
+//        buttontanInverse.setOnClickListener(this);
 
 
     }
@@ -191,8 +193,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     break;
                 }
 
+
                 String par=")";
                 String newS="";
+
+
 
                 if(parenthesis > 0 && parenthesisClose < 1){
                     for(int i=0;i<parenthesis;i++){
@@ -210,6 +215,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 sign=1;
                 parenthesis=0;
                 parenthesisClose=0;
+
                 break;
 
             case R.id.clear:
