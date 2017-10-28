@@ -1,12 +1,8 @@
 package nyc.c4q.calculator;
 
-
-import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Surface;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -24,12 +20,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     int sign;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         buttonZero = (Button) findViewById(R.id.zero);
         buttonOne = (Button) findViewById(R.id.one);
@@ -83,11 +77,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonClear.setOnClickListener(this);
         buttonEquals.setOnClickListener(this);
         buttonPercentage.setOnClickListener(this);
-
+        buttonDot.setOnClickListener(this);
 
 
     }
-
 
     public void reset() {
         if (sign == 1) {
@@ -157,6 +150,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 edtNumber.setText(edtNumber.getText() + "/");
                 break;
             case R.id.equals:
+
+
                 MathJS mathJS = new MathJS();
                 String answer = mathJS.eval(edtNumber.getText().toString());
                 System.out.println(answer);
@@ -221,7 +216,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
 
-    
+
+
     }
 }
-
