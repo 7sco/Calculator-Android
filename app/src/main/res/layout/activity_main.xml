@@ -213,7 +213,6 @@ android:orientation="vertical">
             android:typeface="sans"
             />
 
-
         <Button
             android:background="@drawable/roundedbutton"
             android:id="@+id/rest"
@@ -359,3 +358,4 @@ android:orientation="vertical">
 
 
 </LinearLayout>
+
