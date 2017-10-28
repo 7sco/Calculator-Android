@@ -14,13 +14,11 @@ package nyc.c4q.calculator;
 
         import mathjs.niltonvasques.com.mathjs.MathJS;
 
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private boolean isInverse = false;
     private Button buttonZero, buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven, buttonEight, buttonNine;
-    private Button buttonRest, buttonTimes, buttonDivision, buttonClear, buttonEquals, buttonDot, buttonPlus, buttonPercentage, buttonMakeNegative, buttontanInverse, fcloseParenthesis;
-
+    private Button buttonRest, buttonTimes, buttonDivision, buttonClear, buttonEquals, buttonDot, buttonPlus, buttonPercentage, buttonMakeNegative, buttonAnsrecord, buttontanInverse, fcloseParenthesis;
     private Button buttonDeg, buttonSin, buttonLn, buttonCos, buttonLog, buttonTan, buttonSquareRoot, buttonXSquare, buttonYPowerX,
             buttonRad, buttonCosInverse, buttonSinInverse, buttonTanInverse, buttonPi, buttonAbs;
 
@@ -29,6 +27,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int sign;
     int parenthesis;
     int parenthesisClose=0;
+
+    boolean ansRecord;
+    String value;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonDot = (Button) findViewById(R.id.dot);
 
         buttonPercentage = (Button) findViewById(R.id.percentage);
+
+
         buttonSin = (Button) findViewById(R.id.sin);
         buttonSquareRoot = (Button) findViewById(R.id.sqrt);
         buttonCos = (Button) findViewById(R.id.cos);
@@ -70,10 +73,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonLn = (Button) findViewById(R.id.natural_log);
         buttonLog = (Button) findViewById(R.id.log);
         buttonMakeNegative = (Button) findViewById(R.id.make_negative);
-
+        buttonAnsrecord = (Button) findViewById(R.id.ansRecord);
         //buttontanInverse = (Button) findViewById(R.id.tan_inverse);
-
-
 
         edtNumber = (TextView) findViewById(R.id.text);
         buttonZero.setOnClickListener(this);
@@ -95,9 +96,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonPercentage.setOnClickListener(this);
         buttonDot.setOnClickListener(this);
         buttonMakeNegative.setOnClickListener(this);
-
+        buttonAnsrecord.setOnClickListener(this);
 //        buttontanInverse.setOnClickListener(this);
-
 
 
     }
@@ -117,79 +117,62 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 reset();
                 edtNumber.setText(edtNumber.getText() + "0");
                 sign=0;
-
                 break;
             case R.id.one:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "1");
                 sign=0;
-
                 break;
             case R.id.two:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "2");
                 sign=0;
-
                 break;
             case R.id.three:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "3");
                 sign=0;
-
                 break;
             case R.id.four:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "4");
                 sign=0;
-
                 break;
             case R.id.five:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "5");
-
                 sign=0;
-
                 break;
             case R.id.six:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "6");
-
                 sign=0;
-
                 break;
             case R.id.seven:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "7");
-
                 sign=0;
-
                 break;
             case R.id.eight:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "8");
-
                 sign=0;
-
                 break;
             case R.id.nine:
                 reset();
                 edtNumber.setText(edtNumber.getText() + "9");
                 sign=0;
-
                 break;
             case R.id.dot:
                 reset();
                 edtNumber.setText(edtNumber.getText() + ".");
-
                 sign=0;
-
                 break;
             case R.id.plus:
                 edtNumber.setText(edtNumber.getText() + "+");
                 break;
             case R.id.rest:
                 edtNumber.setText(edtNumber.getText() + "-");
-
 
                 break;
             case R.id.times:
@@ -199,19 +182,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.division:
                 edtNumber.setText(edtNumber.getText() + "/");
 
-
                 break;
 
             case R.id.make_negative:
-
-
 
                 if(edtNumber.getText().toString().contains("-") && edtNumber.getText().toString().charAt(0) == '-'){
                     break;
                 }
                 edtNumber.setText(edtNumber.getText() + "-");
                 break;
-
 
             case R.id.equals:
 
@@ -241,20 +220,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     edtNumber.setText(answer);
 
+                    value= answer;
+                    ansRecord =true;
+
+
+
                 }catch (DuktapeException e){
                     edtNumber.setText("Error");
                 }
 
 
                 sign=1;
-
                 parenthesis=0;
                 parenthesisClose=0;
+
 
                 break;
 
             case R.id.clear:
                 edtNumber.setText("");
+                sign=0;
                 break;
             case R.id.percentage:;
                 edtNumber.setText(edtNumber.getText() + "%");
@@ -283,7 +268,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.sqrt:
                 edtNumber.setText(edtNumber.getText() + "sqrt(");
-
                 parenthesis++;
                 break;
             case R.id.e_to_x:
@@ -319,9 +303,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 edtNumber.setText(edtNumber.getText() + "atan(");
                 parenthesis++;
                 break;
-            case R.id.rad:
-                edtNumber.setText(edtNumber.getText() + "√(");
-                parenthesis++;
+
+            case R.id.ansRecord:
+                if (ansRecord){
+                    edtNumber.setText(value);
+                    sign=0;
+
+                }
+                else{
+                    break;
+                }
+
+
                 break;
 
             default:

@@ -395,12 +395,12 @@ android:orientation="vertical">
 
 
         <Button
+            android:id="@+id/ansRecord"
             android:background="@drawable/roundedbutton2"
-            android:id="@+id/rad"
             android:layout_width="0dp"
             android:layout_weight=".25"
             android:layout_height="match_parent"
-            android:text="RAD"
+            android:text="ans( )"
             android:textColor="@color/color_numbers"
             android:textSize="@dimen/text_size"
             android:typeface="sans"
