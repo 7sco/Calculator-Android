@@ -1,5 +1,6 @@
 package nyc.c4q.calculator;
 
+
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,10 +24,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     int sign;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         buttonZero = (Button) findViewById(R.id.zero);
         buttonOne = (Button) findViewById(R.id.one);
@@ -82,7 +85,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonPercentage.setOnClickListener(this);
 
 
+
     }
+
 
     public void reset() {
         if (sign == 1) {
@@ -216,7 +221,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
 
-
-
+    
     }
 }
+

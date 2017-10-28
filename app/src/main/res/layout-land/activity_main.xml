@@ -1,68 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nyc.c4q.calculator.MainActivity"
     android:background="#fff"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    tools:context="nyc.c4q.calculator.MainActivity">
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/numbers_background"
         android:layout_gravity="center_horizontal"
-        >
+        android:layout_weight="1"
+        android:background="@color/numbers_background">
+
         <TextView
-            android:id="@+id/text"
-            android:textColor="#212121"
+            android:id="@+id/display"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="50sp"
-            android:paddingLeft="20dp"
+            android:layout_gravity="center_vertical"
             android:background="@color/numbers_background"
             android:freezesText="true"
-            android:layout_gravity="center_vertical"
-            android:hint="|"
             android:gravity="end"
+            android:hint="|"
+            android:paddingLeft="20dp"
             android:paddingRight="10dp"
-            />
+            android:textColor="#212121"
+            android:textSize="50sp" />
     </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
-        android:orientation="vertical"
         android:layout_gravity="center"
+        android:layout_weight="2"
         android:background="@color/colorPrimary"
+        android:orientation="vertical"
 
         >
 
 
-
-
         <LinearLayout
             android:id="@+id/numbers4"
-            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".4"
-            >
+            android:gravity="center">
 
             <Button
+
                 android:background="@drawable/roundedbutton2"
                 android:id="@+id/parenthesis_left"
+
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton2"
+                android:text="sinh"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
+
                 android:text="("
                 android:onClick="onClick"
                 />
@@ -70,10 +69,11 @@
             <Button
                 android:background="@drawable/roundedbutton2"
                 android:id="@+id/parenthesis_right"
+
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
                 android:text=")"
+
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
@@ -82,12 +82,12 @@
 
 
             <Button
-                android:background="@drawable/roundedbutton2"
-                android:id="@+id/sqrt"
+                android:id="@+id/tanh"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
-                android:text="\u221A"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton2"
+                android:text="tanh"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
@@ -95,11 +95,11 @@
                 />
 
             <Button
-                android:background="@drawable/roundedbutton"
                 android:id="@+id/clear"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton"
                 android:text="C"
                 android:textColor="@color/numbers_red"
                 android:textSize="@dimen/text_size"
@@ -110,73 +110,70 @@
             <Button
                 android:background="@drawable/roundedbutton"
                 android:id="@+id/pi"
+
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
                 android:text="PI"
+
                 android:textColor="@color/blue_numbers"
                 android:textSize="@dimen/text_size"
-                android:typeface="sans"                />
+                android:typeface="sans" />
 
             <Button
-                android:background="@drawable/roundedbutton"
-                android:id="@+id/percentage"
+                android:id="@+id/closeParenthesis"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
-                android:text="%"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton"
+                android:text=")"
                 android:textColor="@color/blue_numbers"
                 android:textSize="@dimen/text_size"
-                android:typeface="sans"
-                />
-
+                android:typeface="sans" />
 
 
             <Button
-                android:background="@drawable/roundedbutton"
                 android:id="@+id/division"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton"
                 android:text="\u00F7"
                 android:textColor="@color/blue_numbers"
                 android:textSize="@dimen/text_size"
-                android:typeface="sans"
-                />
-
+                android:typeface="sans" />
 
 
         </LinearLayout>
 
 
-
         <LinearLayout
             android:id="@+id/numbers3"
-            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".4"
-            >
+            android:gravity="center">
 
             <Button
-                android:background="@drawable/roundedbutton2"
                 android:id="@+id/sin"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton2"
+                android:text="sin"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
                 android:text="sin"
                 android:onClick="onClick"
+
                 />
 
             <Button
-                android:background="@drawable/roundedbutton2"
                 android:id="@+id/cos"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton2"
                 android:text="cos"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
@@ -186,11 +183,11 @@
 
 
             <Button
-                android:background="@drawable/roundedbutton2"
                 android:id="@+id/tan"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton2"
                 android:text="tan"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
@@ -199,54 +196,51 @@
                 />
 
 
-
             <Button
-                android:background="@drawable/roundedbutton"
                 android:id="@+id/seven"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton"
                 android:text="7"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
 
                 />
+
             <Button
-                android:background="@drawable/roundedbutton"
                 android:id="@+id/eight"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton"
                 android:text="8"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
-                android:typeface="sans"
-                />
+                android:typeface="sans" />
 
             <Button
-                android:background="@drawable/roundedbutton"
                 android:id="@+id/nine"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton"
                 android:text="9"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
-                android:typeface="sans"
-                />
+                android:typeface="sans" />
 
             <Button
-                android:background="@drawable/roundedbutton"
                 android:id="@+id/times"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton"
                 android:text="\u00D7"
                 android:textColor="@color/blue_numbers"
                 android:textSize="@dimen/text_size"
-                android:typeface="sans"
-                />
+                android:typeface="sans" />
 
 
         </LinearLayout>
@@ -254,33 +248,34 @@
 
         <LinearLayout
             android:id="@+id/numbers2"
-            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".4"
-            android:textSize="@dimen/text_size"
-            >
+            android:gravity="center"
+            android:textSize="@dimen/text_size">
 
             <Button
-                android:background="@drawable/roundedbutton2"
-                android:id="@+id/sin_inverse"
+                android:id="@+id/buttonE"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton2"
+                android:text="e"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="normal"
                 android:text="sin^-1"
                 android:onClick="onClick"
+
                 />
 
             <Button
-                android:background="@drawable/roundedbutton2"
-                android:id="@+id/cos_inverse"
+                android:id="@+id/x_y"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
-                android:text="cos^-1"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton2"
+                android:text="x^y"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
@@ -289,12 +284,12 @@
 
 
             <Button
-                android:background="@drawable/roundedbutton2"
-                android:id="@+id/tan_inverse"
+                android:id="@+id/sqrt"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
-                android:text="tan^-1"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton2"
+                android:text="\u221A"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
@@ -303,56 +298,55 @@
 
 
             <Button
-                android:background="@drawable/roundedbutton"
                 android:id="@+id/four"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton"
                 android:text="4"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
 
                 />
+
             <Button
-                android:background="@drawable/roundedbutton"
                 android:id="@+id/five"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton"
                 android:text="5"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
 
                 />
+
             <Button
-                android:background="@drawable/roundedbutton"
                 android:id="@+id/six"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton"
                 android:text="6"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
-                android:typeface="sans"
-                />
+                android:typeface="sans" />
 
 
             <Button
-                android:background="@drawable/roundedbutton"
-                android:id="@+id/rest"
+                android:id="@+id/minus"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton"
                 android:text="\u207B"
                 android:textColor="@color/blue_numbers"
                 android:textSize="@dimen/text_size"
-                android:typeface="sans"
-                />
+                android:typeface="sans" />
 
         </LinearLayout>
-
 
 
         <LinearLayout
@@ -361,16 +355,16 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".4"
-            android:gravity="center"
-            >
+            android:gravity="center">
 
 
             <Button
-                android:background="@drawable/roundedbutton2"
-                android:id="@+id/e_to_square"
+                android:id="@+id/x_to_2"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton2"
+                android:text="x\u00B2"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="normal"
@@ -380,12 +374,12 @@
                 />
 
             <Button
-                android:background="@drawable/roundedbutton2"
-                android:id="@+id/e_to_x"
+                android:id="@+id/x_to_3"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
-                android:text="e^x"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton2"
+                android:text="x\u00B3"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
@@ -396,10 +390,11 @@
             <Button
                 android:background="@drawable/roundedbutton2"
                 android:id="@+id/rad"
+
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
                 android:text="RAD"
+
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="sans"
@@ -407,75 +402,70 @@
                 />
 
 
-
             <Button
-                android:background="@drawable/roundedbutton"
                 android:id="@+id/one"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".25"
+                android:background="@drawable/roundedbutton"
                 android:text="1"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
-                android:typeface="sans"
-                />
+                android:typeface="sans" />
 
             <Button
-                android:background="@drawable/roundedbutton"
                 android:id="@+id/two"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton"
                 android:text="2"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
-                android:typeface="sans"
-                />
+                android:typeface="sans" />
 
             <Button
-                android:background="@drawable/roundedbutton"
                 android:id="@+id/three"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton"
                 android:text="3"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
-                android:typeface="sans"
-                />
+                android:typeface="sans" />
 
 
             <Button
-                android:background="@drawable/roundedbutton"
                 android:id="@+id/plus"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton"
                 android:text="+"
                 android:textColor="@color/blue_numbers"
                 android:textSize="@dimen/text_size"
                 android:textStyle="normal"
-                android:typeface="sans"
-                />
+                android:typeface="sans" />
 
         </LinearLayout>
 
 
         <LinearLayout
             android:id="@+id/numbers5"
-            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".4"
-            >
+            android:gravity="center">
 
 
             <Button
-                android:background="@drawable/roundedbutton2"
-                android:id="@+id/absolute_value"
+                android:id="@+id/exp"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton2"
+                android:text="exp"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
                 android:typeface="normal"
@@ -485,11 +475,11 @@
                 />
 
             <Button
-                android:background="@drawable/roundedbutton2"
-                android:id="@+id/natural_log"
+                android:id="@+id/ln"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton2"
                 android:text="ln"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
@@ -500,11 +490,11 @@
 
 
             <Button
-                android:background="@drawable/roundedbutton2"
                 android:id="@+id/log"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton2"
                 android:text="log"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
@@ -514,14 +504,12 @@
                 />
 
 
-
-
             <Button
-                android:background="@drawable/roundedbutton"
                 android:id="@+id/make_negative"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton"
                 android:text="\u207A/\u208B"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
@@ -531,23 +519,22 @@
 
 
             <Button
-                android:background="@drawable/roundedbutton"
                 android:id="@+id/zero"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton"
                 android:text="0"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
-                android:typeface="sans"
-                />
+                android:typeface="sans" />
 
             <Button
-                android:background="@drawable/roundedbutton"
                 android:id="@+id/dot"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_weight=".25"
+                android:background="@drawable/roundedbutton"
                 android:text="\u2219"
                 android:textColor="@color/color_numbers"
                 android:textSize="@dimen/text_size"
@@ -556,11 +543,12 @@
                 />
 
             <Button
-                android:background="@color/blue_numbers_bg"
                 android:id="@+id/equals"
                 android:layout_width="0dp"
-                android:layout_weight=".25"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight=".25"
+                android:background="@color/blue_numbers_bg"
                 android:text="\u003D"
                 android:textColor="@color/numbers_background"
                 android:textSize="@dimen/text_size"
@@ -568,6 +556,7 @@
                 android:typeface="sans"
 
                 />
+
 
 
         </LinearLayout>
