@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonLog = (Button) findViewById(R.id.log);
         buttonMakeNegative = (Button) findViewById(R.id.make_negative);
         buttonAnsrecord = (Button) findViewById(R.id.ansRecord);
-        //buttontanInverse = (Button) findViewById(R.id.tan_inverse);
+
 
         edtNumber = (TextView) findViewById(R.id.text);
         buttonZero.setOnClickListener(this);
@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonPercentage.setOnClickListener(this);
         buttonDot.setOnClickListener(this);
         buttonMakeNegative.setOnClickListener(this);
+        buttonPi.setOnClickListener(this);
 //        buttonAnsrecord.setOnClickListener(this);
 //        buttontanInverse.setOnClickListener(this);
 
@@ -289,7 +290,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 edtNumber.setText(edtNumber.getText() + "^2");
                 break;
             case R.id.pi:
-                edtNumber.setText(edtNumber.getText() + "\u03c0");
+                edtNumber.setText(edtNumber.getText() + "pi");
                 break;
             case R.id.sin_inverse:
                 edtNumber.setText(edtNumber.getText() + "asin(");
